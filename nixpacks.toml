@@ -1,7 +1,8 @@
-providers = ["java-maven"]
-
 [phases.setup]
 nixPkgs = ["openjdk17", "maven"]
+
+[phases.install]
+cmds = ["chmod +x mvnw", "./mvnw dependency:go-offline"]
 
 [phases.build]
 cmds = ["./mvnw clean package -DskipTests"]
