@@ -1,8 +1,7 @@
-[phases.setup]
-nixPkgs = ["openjdk17", "maven"]
+providers = ["java"]
 
 [phases.build]
 cmds = ["./mvnw clean package -DskipTests"]
 
 [start]
-cmd = "java -jar target/*.jar"
+cmd = "java -Dserver.port=${PORT} -jar target/*.jar"
