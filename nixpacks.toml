@@ -1,14 +1,5 @@
-[providers]
-java = "17"
-
 [phases.setup]
-cmds = [
-    "apt-get update",
-    "apt-get install -y wget"
-]
-
-[phases.install]
-cmds = ["./mvnw dependency:resolve"]
+nixPkgs = ["openjdk17", "maven"]
 
 [phases.build]
 cmds = ["./mvnw clean package -DskipTests"]
